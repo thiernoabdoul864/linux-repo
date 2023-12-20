@@ -9,8 +9,10 @@ eula --agreed
 firstboot --disable
 reboot 
 5. Make sure http is added to firewall and verify that items are accessible from an external browser using http://ip_address/item 
-crete the client machine and perform the basic settings, then start the mahine.
-At machine startup, hit tab and enter: inst.ks=http://ip_add/kickstart.cfg then hit enter. 
-If everything works fine, no more manual intervention till server is ready.
+6. crete the client machine and perform the basic settings, then start the mahine.
+7. At machine startup, hit tab and enter: inst.ks=http://ip_add/kickstart.cfg then hit enter. 
+8. If everything works fine, no more manual intervention till server is ready.
+
 Below is an example of a ready edited kickstart file 
+
 ![Alt text](image.png)
