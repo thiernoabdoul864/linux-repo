@@ -1,4 +1,4 @@
-# How to automatically build a server Using kickstart 
+# How to automatically build a server Using kickstart and httpd server 
 1. configure httpd server 
 2. Mount the /dev/sr0 device permanently into /mnt and create a soft link inside /var/www/html called dvd and pointing to /mnt 
 changer permissions to both items inside /var/www/html to rw-r--r-- 
