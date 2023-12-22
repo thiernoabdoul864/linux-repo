@@ -33,4 +33,5 @@ nameserver is the dns, and the controller and client1 and client2 are the client
 
 ![Alt text](image-3.png)
 
-### 4. Restart the named daemon and configure all the machines so their dns server is the ip address of the confgured dns. and try to ping other other using their hostnames. Also use nslookup to check the reverse lookup.
+### 4. Restart the named daemon and configure all the machines
+ Ensure the dns server is the ip address of the confgured dns. and try to ping other other using their hostnames. Also use nslookup to check the reverse lookup.
