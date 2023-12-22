@@ -1,12 +1,8 @@
 # How to confugure DNS
-1. Install required packages
-yum install bind bind-utils -y
-2. start and enable dns daemon 
-`systemctl enable --now named`
-3. Edit the named configuration file 
-`vim /etc/named.conf`
-- from Top to Bottom
-inside options, edit the line `listen-on port 53 {127.0.0.1 ; 192.168.1.254}  add the ip address of the server. in the above line, 192.168.1.254 is the ip address of the dns server 
+1.Install required packages yum install bind bind - utils - y 2.start
+and enable dns daemon `systemctl enable --now named` 3.Edit the named configuration file `vim /etc/named.conf` -
+from Top to Bottom inside options,
+    edit the line `listen-on port 53 {127.0.0.1 ; 192.168.1.254}  add the ip address of the server. in the above line, 192.168.1.254 is the ip address of the dns server 
 
 Still inside options, add the below lines:
 forwarders {
