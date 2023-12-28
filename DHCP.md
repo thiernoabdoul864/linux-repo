@@ -44,7 +44,7 @@ Max-lease-time: Maximum lease duration; if a client asks for more, it gets this 
 Configuration File (/etc/dhcp/dhcpd.conf):
 
 `subnet 192.168.1.0 netmask 255.255.255.0 {
-
+    
     range 192.168.1.250 192.168.1.253; # Adjust the range as needed
 
     option domain-name-servers 192.168.1.254, 8.8.4.4; # DNS servers
@@ -52,9 +52,9 @@ Configuration File (/etc/dhcp/dhcpd.conf):
     option routers 192.168.1.1; # Default gateway
 
     default-lease-time 10800; # 3 minutes
-    
+
     max-lease-time 14400; # 4 hours
-}`
+    }`
 
 
 ### Explanation:
