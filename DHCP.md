@@ -44,10 +44,15 @@ Max-lease-time: Maximum lease duration; if a client asks for more, it gets this 
 Configuration File (/etc/dhcp/dhcpd.conf):
 
 `subnet 192.168.1.0 netmask 255.255.255.0 {
+
     range 192.168.1.250 192.168.1.253; # Adjust the range as needed
+
     option domain-name-servers 192.168.1.254, 8.8.4.4; # DNS servers
+
     option routers 192.168.1.1; # Default gateway
+
     default-lease-time 10800; # 3 minutes
+    
     max-lease-time 14400; # 4 hours
 }`
 
@@ -59,7 +64,7 @@ Sets default lease time to 3 hours and max lease time to 4 hours.
 
 # DHCP Configuration
 ### step 1: Installing dhcp package 
-`yum install -y dhcpd` 
+`yum install -y dhcpd-server` 
 ### step 2: Creating dhcp config file
 Configuring a DHCP server involves a series of steps out of which, the first step is to create the configuration file. The configuration file created while installing the dhcp package is /etc/dhcp/dhcpd.conf, which is an empty file. This file is used to store network information about the client systems. This file can be configured by referring to the example file /usr/share/doc/dhcp-version;/dhcpd.conf.example. Suppose if the version of dhcp installed in the system is 4.2.5, the file name would be /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example. Apart from /etc/dhcp/dhcpd.conf file, the DHCP server also uses  /var/lib/dhcpd/dhcpd.leases file to store lease information.
 
