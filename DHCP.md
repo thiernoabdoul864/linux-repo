@@ -5,18 +5,16 @@ DHCP server has the ability to assign more than 80 different network-related par
 
 The complete mechanism of assigning these parameters to the hosts takes place through a process called DORA process.
 
-Basic Information about DHCP
+### Basic Information about DHCP
 Configuration details for DHCP are provided below:
 
-Package required for DHCP service to function is "dhcp".
+##### Package required for DHCP service to function is "dhcp".
+##### By default DHCP service runs on the port 57.
+##### The default Configuration file to modify DHCP service behaviour is /etc/dhcp/dhcpd.conf
+##### The name of the Daemon/service is dhcpd in RHEL systems.
 
-By default DHCP service runs on the port 57.
-
-The default Configuration file to modify DHCP service behaviour is /etc/dhcp/dhcpd.conf
-
-The name of the Daemon/service is dhcpd in RHEL systems.
 DORA Process - DHCP Discover - DHCP Offer - DHCP Request - DHCP Acknoledgment 
-Scenario:
+### Scenario:
 Organization: Demagorg Limited
 Employees: 100
 Systems: Each employee has a dedicated system.
@@ -30,9 +28,9 @@ Mike, the system administrator, opts for a DHCP server for automatic IP configur
 DHCP ensures no IP conflicts within the network.
 DHCP Server Details:
 
-Hostname: node1
-IP Address: 192.168.10.10
-Network Address: 192.168.10.0
+Hostname: nameserver
+IP Address: 192.168.1.254
+Network Address: 192.168.1.0
 DHCP Configuration Parameters (/etc/dhcp/dhcpd.conf):
 
 Range: Valid range of IP addresses leaseable to client machines in the subnet.
@@ -45,25 +43,27 @@ Default-lease time: Time assigned to a client if it doesn't request a specific l
 Max-lease-time: Maximum lease duration; if a client asks for more, it gets this maximum.
 Configuration File (/etc/dhcp/dhcpd.conf):
 
-bash
-Copy code
-subnet 192.168.10.0 netmask 255.255.255.0 {
-    range 192.168.10.20 192.168.10.50; # Example range, adjust as needed
-    default-lease-time 600; # 10 minutes
-    max-lease-time 7200; # 2 hours
-}
-Explanation:
+`subnet 192.168.1.0 netmask 255.255.255.0 {
+    range 192.168.1.250 192.168.1.253; # Adjust the range as needed
+    option domain-name-servers 192.168.1.254, 8.8.4.4; # DNS servers
+    option routers 192.168.1.1; # Default gateway
+    default-lease-time 10800; # 3 minutes
+    max-lease-time 14400; # 4 hours
+}`
+
+
+### Explanation:
 Defines a subnet with the given network address and netmask.
 Specifies the range of IP addresses that can be leased to client machines.
-Sets default lease time to 10 minutes and max lease time to 2 hours.
+Sets default lease time to 3 hours and max lease time to 4 hours.
 
 # DHCP Configuration
 ### step 1: Installing dhcp package 
-`yum install -y dhtcp` 
+`yum install -y dhcpd` 
 ### step 2: Creating dhcp config file
 Configuring a DHCP server involves a series of steps out of which, the first step is to create the configuration file. The configuration file created while installing the dhcp package is /etc/dhcp/dhcpd.conf, which is an empty file. This file is used to store network information about the client systems. This file can be configured by referring to the example file /usr/share/doc/dhcp-version;/dhcpd.conf.example. Suppose if the version of dhcp installed in the system is 4.2.5, the file name would be /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example. Apart from /etc/dhcp/dhcpd.conf file, the DHCP server also uses  /var/lib/dhcpd/dhcpd.leases file to store lease information.
 
-Observe the snapshot of the /etc/dhcp/dhcpd.conf file which is empty, below.
+##### Observe the snapshot of the /etc/dhcp/dhcpd.conf file which is empty, below.
 
 ![Alt text](image-4.png)
 
@@ -75,9 +75,11 @@ In the configuration file, the corressponding subnet and netmask are mentioned, 
 
 `systemctl enable dhcpd` 
 
-`systemctl start dhcpd` 
+`systemctl start dhcpd`  OR `systemctl enable --now dhcp`
 
-### Now, the status of the dhcpd service should be active as shown in the snapshot below: 
+### Add the dhcp in the firewall 
+`firewall-cmd --add-service=dhcp --permanent` 
+`firewall-cmd --reload` 
 
-`systemctl enable --now dhcp` 
-
+### Restart dhcp 
+`systemctl restart dhcp` 
