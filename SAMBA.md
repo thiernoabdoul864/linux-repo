@@ -1,4 +1,3 @@
-SAMBA
 Sequence #: 1
 name:  Install packages
 Example:  
