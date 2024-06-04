@@ -1,7 +1,7 @@
 Sequence #: 1
 name:  Install packages
 Example:  
-yum install samba samba-client samba-common cifs-utils
+#yum install samba samba-client samba-common cifs-utils
 
 sudo systemctl enable smb
 sudo systemctl enable nmb
