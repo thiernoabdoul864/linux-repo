@@ -31,8 +31,8 @@ I am always eager to connect with fellow professionals, enthusiasts, and learner
 Feel free to explore my GitHub profile to see more of my work, and don’t hesitate to reach out if you have any questions or need further assistance.
 
 - Email: thiernodiallo864@gmail.com
-- GitHub: thiernoabdoul864
 - LinkedIn: www.linkedin.com/in/thiernoaboul864
+- 
 ## Contributions
 Contributions are welcome! If you have suggestions, improvements, or new configurations to add, feel free to open an issue or submit a pull request. Let’s collaborate to make this repository a valuable resource for the Linux community.
 
