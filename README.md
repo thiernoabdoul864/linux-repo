@@ -21,7 +21,22 @@ In this repository, I am sharing detailed guides and configurations for several 
 - **Bash Scripting**: Examples and best practices for writing Bash scripts.
 - **Containers**: Setting up and managing containers using Docker and other containerization tools.
 - **Kickstart**: Automating the installation of Linux systems using Kickstart.
-- **Zabbix**: Instructions for setting up Zabbix for monitoring.
+
+  Browse the Files: Each service's configuration guide is stored in a markdown file (e.g., DNS.md, DHCP.md).
+
+Follow the Instructions: Open the relevant markdown file and follow the instructions to set up the service.
+
+Connect with Me
+I am always eager to connect with fellow professionals, enthusiasts, and learners in the tech community. Feel free to explore my GitHub profile to see more of my work, and don’t hesitate to reach out if you have any questions or need further assistance.
+
+Email: thiernodiallo864@gmail.com
+GitHub: thiernoabdoul864
+LinkedIn: Thierno Diallo
+Contributions
+Contributions are welcome! If you have suggestions, improvements, or new configurations to add, feel free to open an issue or submit a pull request. Let’s collaborate to make this repository a valuable resource for the Linux community.
+
+Thank you for visiting my repository. I hope you find the guides useful and informative. Happy configuring!
+
 
 ## How to Use This Repository
 
