@@ -33,7 +33,7 @@ Feel free to explore my GitHub profile to see more of my work, and don’t hesit
 - Email: thiernodiallo864@gmail.com
 - GitHub: thiernoabdoul864
 - LinkedIn: Thierno Diallo
-- Contributions
+Contributions
 Contributions are welcome! If you have suggestions, improvements, or new configurations to add, feel free to open an issue or submit a pull request. Let’s collaborate to make this repository a valuable resource for the Linux community.
 
 Thank you for visiting my repository. I hope you find the guides useful and informative. Happy configuring!
