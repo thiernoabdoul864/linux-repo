@@ -1,4 +1,4 @@
-# Thierno Diallo - Passionate Linux System Administrator
+# Thierno Diallo - Passionate Linux System Administrator | RHCSA
 
 ## About Me
 
@@ -32,7 +32,7 @@ Feel free to explore my GitHub profile to see more of my work, and don’t hesit
 
 - Email: thiernodiallo864@gmail.com
 - LinkedIn: www.linkedin.com/in/thiernoaboul864
-- 
+  
 ## Contributions
 Contributions are welcome! If you have suggestions, improvements, or new configurations to add, feel free to open an issue or submit a pull request. Let’s collaborate to make this repository a valuable resource for the Linux community.
 
