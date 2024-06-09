@@ -33,33 +33,33 @@ Example:
         read only = no
 
 
-NB: See /etc/samba/smb.conf.example for configuration hints 
+##NB: See /etc/samba/smb.conf.example for configuration hints 
 
-comments:  This is going to land us inside the samba configuration file. the first red line is the name of our samba shared directory. the second line is the path of our directory mentioned above. the third is just for a comment, and the last two lines are for the read and write permissions. 
-After that, we can test if everything is set up correctly by hitting:
- testparm then enter 
-Sequence #: 4 
-name: Add samba to firewall, set SELinux context for samba and the setsebool for samba
-Example:  
-firewall-cmd –add-service=samba  – permanent 
-firewall-cmd –reload   // always remember to reload the firewall so changes take effect. 
-semanage fcontext -at samba_share_t  “/common(/.*)?”  // setting SELinux context 
-restorecon  -Rv  /common   // restoring selinux after making changes - always rember to do that 
-getsebool -a | grep samba_export   // checking samba boolean values
-getsebool -a | grep samba_share    // checking samba boolean values
-setsebool samba_export_all_rw on -P
- setsebool samba_export_all_ro on -P
- setsebool samba_share_nfs on -P
+##comments:  This is going to land us inside the samba configuration file. the first red line is the name of our ##samba shared directory. the second line is the path of our directory mentioned above. the third is just for a ##comment, and the last two lines are for the read and write permissions. 
+##After that, we can test if everything is set up correctly by hitting:
+ ##testparm then enter 
+##Sequence #: 4 
+##name: Add samba to firewall, set SELinux context for samba and the setsebool for samba
+##Example:  
+##firewall-cmd –add-service=samba  – permanent 
+##firewall-cmd –reload   // always remember to reload the firewall so changes take effect. 
+##semanage fcontext -at samba_share_t  “/common(/.*)?”  // setting SELinux context 
+##restorecon  -Rv  /common   // restoring selinux after making changes - always rember to do that 
+##getsebool -a | grep samba_export   // checking samba boolean values
+##getsebool -a | grep samba_share    // checking samba boolean values
+##setsebool samba_export_all_rw on -P
+ ##setsebool samba_export_all_ro on -P
+ ##setsebool samba_share_nfs on -P
 	
 comments: In the above lines, we set up the firewall, the SELinux fcontext, and boolean values. 
 
-Sequence #: 5
-name:  Create samba user enable it and test it 
-Example:  
-useradd  smb_user
-smbpasswd -a smb_user
-sudo smbpasswd -e smb_user 
-smbclient -L //localhost -U smb_user   // verify samba share locally 
+##Sequence #: 5
+#name:  Create samba user enable it and test it 
+##Example:  
+##useradd  smb_user
+##smbpasswd -a smb_user
+##sudo smbpasswd -e smb_user 
+##smbclient -L //localhost -U smb_user   // verify samba share locally 
 
 comments:  This is the end of the server-side samba configuration
 
