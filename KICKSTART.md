@@ -4,7 +4,8 @@
 and create a soft link inside / var / www / html called dvd
 and pointing to / mnt - changer permissions to both items inside / var / www / html to rw - r --r-- 
 2. copy the anaconda file inside the / var / www / html / kickstart.cfg 3.
-modify that copy by adding the below lines - url --url=http://ip_address_of_current_machine/dvd 
+modify that copy by adding the below lines
+    - url --url=http://ip_address_of_current_machine/dvd 
     - eula --agreed
     - firstboot --disable
     - reboot
