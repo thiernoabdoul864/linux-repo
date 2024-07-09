@@ -9,6 +9,8 @@ modify that copy by adding the below lines
     - eula --agreed
     - firstboot --disable
     - reboot
+
+
 5.Make sure http is added to firewall
     and verify that items are accessible
 from an external browser using http: // ip_address / item 6.crete the client machine
