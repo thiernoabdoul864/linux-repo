@@ -1,7 +1,7 @@
 # Configuring an Apache Container
 
 ```bash
-# Step 1: Create a Directory as Required by the Assignment
+# Step 1: Create a Directory 
 mkdir /apache/html -p
 chmod 777 -R /apache/html/
 echo "This Is the website from our container" > /apache/html/index.html
