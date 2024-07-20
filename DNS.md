@@ -1,6 +1,6 @@
 # How to confugure DNS
 ### 1.Install required packages:
-`yum install bind bind - utils - y`
+`yum install bind bind-utils - y`
 ### 2.start and enable dns daemon 
 `systemctl enable --now named` 
 ### 3.Edit the named configuration file 
