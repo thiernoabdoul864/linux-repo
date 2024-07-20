@@ -32,6 +32,8 @@ nameserver is the dns, and the controller and client1 and client2 are the client
 - Then vim inside the reverse zone file inside /var/named and modify just like you can see below. 
 
 ![Alt text](image-3.png)
+
+
 NB: Do not forget to at dns service to firewall and reload
 Also ru the below command: 
 chown named:named: /etc/named.conf
