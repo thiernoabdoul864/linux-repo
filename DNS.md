@@ -34,10 +34,10 @@ nameserver is the dns, and the controller and client1 and client2 are the client
 ![Alt text](image-3.png)
 
 
-NB: Do not forget to at dns service to firewall and reload
-Also ru the below command: 
+NB: Do not forget to at dns service to firewall and reload it. 
+Also, run the below command to allow named user to own config files to have full access to them. 
 - chown named:named: /etc/named.conf
-- chown named:named /var/named/forward.db  // allowing named user to own config files to have full access to them.
+- chown named:named /var/named/forward.db  // 
 - chown named:named /var/named/reverse.db 
 ### 4. Restart the named daemon and configure all the machines
  Ensure the dns server is the ip address of the confgured dns. and try to ping other other using their hostnames. Also use nslookup to check the reverse lookup.
