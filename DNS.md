@@ -15,7 +15,12 @@ forwarders {
 }
 - That will allow connected client to be able to connect to the outside world.
 
-- Further down, configure the forward zone and the reverse zone sections, including their paths as you can see below. 
+- Further down, configure the forward zone and the reverse zone sections, including their paths as you can see below.
+- Use the following command to check the BIND configuration syntax:
+  sudo named-checkconf /etc/named.conf
+- If you have created or modified zone files, you should also check their syntax. You can use the named-checkzone utility for this purpose.
+- sudo named-checkzone example.com /var/named/example.com.zone
+
 
 ![Alt text](image-1.png)
 
