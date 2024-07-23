@@ -18,8 +18,6 @@ forwarders {
 - Further down, configure the forward zone and the reverse zone sections, including their paths as you can see below.
 - Use the following command to check the BIND configuration syntax:
   sudo named-checkconf /etc/named.conf
-- If you have created or modified zone files, you should also check their syntax. You can use the named-checkzone utility for this purpose.
-- sudo named-checkzone example.com /var/named/example.com.zone
 
 
 ![Alt text](image-1.png)
@@ -27,7 +25,8 @@ forwarders {
 - Note the syntax and ensure to strictly follow it. Example.com is just an example domain. you will replace that by your domain name.
 In the reverse zone, note how the internet address is written in reverse order appended to in-addr.arpa. Don't what that is, just right it like it is and find it out later if you are rabbit hole.
 - Move inside the forward.db file inside /var/named
-
+- If you have created or modified zone files, you should also check their syntax. You can use the named-checkzone utility for this purpose.
+- sudo named-checkzone example.com /var/named/example.com.zone
 - Modify it as in the below example.
 nameserver is the dns, and the controller and client1 and client2 are the client machines using the dns server and their respective ip addresses.
 
