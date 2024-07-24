@@ -1,19 +1,22 @@
 # How to confugure DNS
-### 1.Install required packages:
+### 1. Install required packages:
 `yum install bind bind-utils - y`
-### 2.start and enable dns daemon 
+### 2. start and enable DNS daemon 
 `systemctl enable --now named` 
-### 3.Edit the named configuration file 
+### 3. Edit the named configuration file 
 `vim /etc/named.conf` 
-- from Top to Bottom inside options, edit the line `listen-on port 53 {127.0.0.1 ; 192.168.1.254} 
--  add the ip address of the server. in the above line, 192.168.1.254 is the ip address of the dns server 
+- from Top to Bottom inside options, edit the line `listen-on port 53 {127.0.0.1; 192.168.1.254} 
+-  add the IP address of the server. in the above line, 192.168.1.254 is the IP address of the DNS server 
 
-- Still inside options, add the below lines:
+- Still, inside options, add the below lines:
 forwarders {
     8.8.8.8;
     8.8.4.4.
-}
-- That will allow connected client to be able to connect to the outside world.
+
+}     
+
+- allow-query { any; };  OR allow-query { localhost; 192.168.1.0/24'; };
+- That will allow connected clients to be able to connect to the outside world.
 
 - Further down, configure the forward zone and the reverse zone sections, including their paths as you can see below.
 - Use the following command to check the BIND configuration syntax:
