@@ -11,9 +11,7 @@
 - Still, inside options, add the below lines:
 forwarders {
     8.8.8.8;
-    8.8.4.4.
-
-}     
+    8.8.4.4.}     
 
 - allow-query { any; };  OR allow-query { localhost; 192.168.1.0/24'; };
 - That will allow connected clients to be able to connect to the outside world.
