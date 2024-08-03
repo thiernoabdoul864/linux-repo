@@ -421,4 +421,3 @@ df -h | awk '$5 > threshold {print $0}' threshold=$threshold
 
 ---
 
-By mastering these concepts and practicing with real-life examples, you will gain a strong understanding of bash scripting and be able to automate tasks efficiently in both development and production environments.
